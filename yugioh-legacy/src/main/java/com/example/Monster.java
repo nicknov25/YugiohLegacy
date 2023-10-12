@@ -55,7 +55,7 @@ public class Monster extends Card implements Serializable {
         super(userId);
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards" , "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards" , "root", "password goes here");
         Statement statement = connection.createStatement();
         ResultSet card = statement.executeQuery
                 ("select atk, def, lvl, element, type from Monsters where id = '" + userId + "';");

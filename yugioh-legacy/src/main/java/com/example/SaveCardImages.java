@@ -39,7 +39,7 @@ public class SaveCardImages {
         String destinationFile;
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards" , "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards" , "root", "password goes here");
         // Create a statement
         Statement statement1 = connection.createStatement();
         Statement statement2 = connection.createStatement();

@@ -53,7 +53,7 @@ public abstract class Card implements Serializable{
     public Card(String userId) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement = connection.createStatement();
         ResultSet card;
         if(this instanceof Monster){

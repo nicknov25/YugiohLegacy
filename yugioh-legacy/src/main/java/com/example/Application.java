@@ -1064,7 +1064,7 @@ public class Application extends javafx.application.Application {
     private String getCardType(String cardId) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement1 = connection.createStatement();
         ResultSet spell = statement1.executeQuery("select element from Spells where id = " + cardId + ";");
         if(spell.next()){
@@ -1084,7 +1084,7 @@ public class Application extends javafx.application.Application {
     private void getAllMonsters() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement1 = connection.createStatement();
         ResultSet monster = statement1.executeQuery("select id from Monsters;");
         while(monster.next()){
@@ -1096,7 +1096,7 @@ public class Application extends javafx.application.Application {
     private void getAllSpells() throws ClassNotFoundException, SQLException {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement1 = connection.createStatement();
             ResultSet spell = statement1.executeQuery("select id from Spells;");
             while (spell.next()){
@@ -1109,7 +1109,7 @@ public class Application extends javafx.application.Application {
         Class.forName("com.mysql.cj.jdbc.Driver");
         // Connect to a database
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement1 = connection.createStatement();
         ResultSet trap = statement1.executeQuery("select id from Traps;");
         while (trap.next()){
@@ -1121,7 +1121,7 @@ public class Application extends javafx.application.Application {
         searchedCards.clear();
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement1 = connection.createStatement();
         Statement statement2 = connection.createStatement();
         Statement statement3 = connection.createStatement();

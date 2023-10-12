@@ -35,7 +35,7 @@ public class AccountHandler{
     public void login() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement = connection.createStatement();
         ResultSet account = statement.executeQuery("select username, wins, losses from Accounts where username = '" + username +
                 "' and password = '" + password + "';");
@@ -56,7 +56,7 @@ public class AccountHandler{
     public void createAccount() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
         Statement statement = connection.createStatement();
         ResultSet account = statement.executeQuery("select username from Accounts where username = '" + username + "';");
         if (account.next()) {
@@ -76,7 +76,7 @@ public class AccountHandler{
             int wins = 0;
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select wins from Accounts where username = '" + username +
                     "' and password = '" + password + "';");
@@ -92,7 +92,7 @@ public class AccountHandler{
         if (loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select losses from Accounts where username = '" + username +
                     "' and password = '" + password + "';");
@@ -108,7 +108,7 @@ public class AccountHandler{
         if (loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             wins = wins + 1;
             Statement statement = connection.createStatement();
             statement.executeUpdate("update Accounts set wins = " + wins + " where username = '" + username +
@@ -120,7 +120,7 @@ public class AccountHandler{
         if (loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             losses = losses + 1;
             Statement statement = connection.createStatement();
             statement.executeUpdate("update Accounts set losses = " + losses + " where username = '" + username +
@@ -132,7 +132,7 @@ public class AccountHandler{
         if (loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             String[] tempDecks = new String[277];
             ArrayList<String> userDecks = new ArrayList<>();
             Statement statement = connection.createStatement();
@@ -157,7 +157,7 @@ public class AccountHandler{
         if (loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select currentDeck from Accounts where username = '" + username +
                     "' and password = '" + password + "';");
@@ -173,7 +173,7 @@ public class AccountHandler{
         if(loggedIn){
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select name from Decks, Accounts where Accounts.username = '" +
                     username + "' and " + deckNum + " = Decks.id;");
@@ -187,7 +187,7 @@ public class AccountHandler{
         if(loggedIn){
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select decks from Decks, Accounts where Accounts.username = '" +
                     username + "' and Accounts.currentDeck = Decks.id;");
@@ -206,7 +206,7 @@ public class AccountHandler{
         if(loggedIn) {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             statement.executeUpdate("update Accounts set currentDeck = " + deckNum + " where username = '" +
                     username + "';");
@@ -229,7 +229,7 @@ public class AccountHandler{
             }
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             statement.executeUpdate("insert into Decks VALUES (NULL, '" + name + "', '" + monsterDeck + "', '" +
                     spellDeck + "', '" + trapDeck + "');");
@@ -255,7 +255,7 @@ public class AccountHandler{
             ArrayList<String> monsters = new ArrayList<>();
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select monster from Decks where id = " + deckNum + ";");
             if(account.next()) {
@@ -271,7 +271,7 @@ public class AccountHandler{
             ArrayList<String> spells = new ArrayList<>();
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select spell from Decks where id = " + deckNum + ";");
             if(account.next()) {
@@ -287,7 +287,7 @@ public class AccountHandler{
             ArrayList<String> traps = new ArrayList<>();
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection
-                    ("jdbc:mysql://localhost:3006/cards", "root", "Classic Yugioh");
+                    ("jdbc:mysql://localhost:3006/cards", "root", "password goes here");
             Statement statement = connection.createStatement();
             ResultSet account = statement.executeQuery("select trap from Decks where id = " + deckNum + ";");
             if(account.next()) {

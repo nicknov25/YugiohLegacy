@@ -35,7 +35,7 @@ public class Main {
         System.out.println("Driver loaded");
         // Connect to a database
         Connection connection = DriverManager.getConnection
-                ("jdbc:mysql://localhost:3006/cards" , "root", "Classic Yugioh");
+                ("jdbc:mysql://localhost:3006/cards" , "root", "password goes here");
         System.out.println("Database connected");
         // Create a statement
         Statement statement1 = connection.createStatement();
